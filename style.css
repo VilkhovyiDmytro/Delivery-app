@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+.border,
+nav {
+  border: 1px solid black;
+  border-radius: 25px;
+}
+header {
+  height: 84px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.shoping {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
+}
+header span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+header a {
+  margin: 5px 5%;
+}
+nav {
+  grid-row: 1/-1;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.menu {
+  grid-column: 3/-1;
+  grid-row: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr auto;
+}
+nav button {
+  border-radius: 20%;
+  background-color: rgb(224, 222, 222);
+  width: 75%;
+  margin: 15px 15px;
+}
+.dishContainer {
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+.pictureOfDish {
+  height: auto;
+  width: 90%;
+  margin: 15px;
+  border-radius: 12px;
+}
+.dishDescription {
+  align-self: baseline;
+  margin-left: 5%;
+}
+
+.dishContainer button {
+  align-self: end;
+  margin: 0 5% 5% 0;
+  width: 40%;
+  border-radius: 8px;
+  border: 1px solid gray;
+}
+
+form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 5fr 1fr;
+  gap: 25px;
+  height: 56vw;
+}
+.info {
+  grid-column: 1;
+  grid-row: 1;
+}
+.order {
+  grid-column: 2/-1;
+  grid-row: 1;
+  padding: 12px;
+  overflow: auto;
+
+}
+.submBtn {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.userForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.userForm div {
+    height: auto;
+  margin-left: 36px;
+}
+
+.userForm div input {
+    height: 60%;
+  width: 288px;
+  border-radius: 15px;
+}
+
+.eachOrder {
+    max-height: 36%;
+    padding-bottom: 20px;
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.imgInCart {
+    grid-column: 1/4;
+    grid-row: 1/-1;
+    max-width: 100%;
+    margin: 8px;
+    border-radius: 12px;
+}
+.descrEachOrder {
+    grid-column: 5/6;
+    grid-row: 1/-1;
+}
+#counter {
+    width: 40%;
+}
+
+
+
+
+
+
+/* Ширина скролбара */
+::-webkit-scrollbar {
+    margin-top: 20px;
+    width: 8px;
+  }
+  
+  /* Тло скролбара */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+
+    background: transparent;
+  }
+  
+  /* Кнопка скролбара */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+
+    background: #888;
+  }
+  
+  /* Кнопка скролбара при наведенні */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    height: 20px;
+  }
+
+  
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+}
+
+main, nav {
+  border: 1px solid #000;
+  border-radius: 25px;
+}
+
+header {
+  grid-area: 1 / 1 / auto / -1;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+header span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header a {
+  margin: 5px 5%;
+}
+
+nav {
+  flex-direction: column;
+  grid-area: 2 / 1 / -1 / 3;
+  align-items: center;
+  margin: 0 15px;
+  display: flex;
+}
+
+main {
+  grid-area: 2 / 3 / -1 / -1;
+}
+
+nav button {
+  width: 75%;
+  background-color: #e0dede;
+  border-radius: 20%;
+  margin: 15px;
+}
+
+/*# sourceMappingURL=index.3a01df49.css.map */

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Delivery App</title>
+  </head>
+  <body>
+    <header>
+      <a href="">Shop</a><span>|</span><a href="">Shoping Cart</a>
+    </header>
+    <div class="shoping hidden" id="">
+      <nav class="">
+        <h2>Shops:</h2>
+        <button>Restik1</button>
+        <button>Restik2</button>
+        <button>Restik3</button>
+        <button>Restik4</button>
+        <button>Restik5</button>
+        <button>Restik6</button>
+      </nav>
+      <main class="menu border">
+        <div class="dishContainer">
+          <img
+            src="./img/gettyimages-1011819170-612x612.jpg"
+            alt="picture of dishes"
+            class="pictureOfDish"
+          />
+          <div class="dishDescription"><h4>Name of dishes</h4></div>
+          <button>add to Card</button>
+        </div>
+        <div class="dishContainer">
+          <img
+            src="./img/gettyimages-1011819170-612x612.jpg"
+            alt="picture of dishes"
+            class="pictureOfDish"
+          />
+          <div class="dishDescription"><h4>Name of dishes</h4></div>
+          <button>add to Card</button>
+        </div>
+        <div class="dishContainer">
+          <img
+            src="./img/gettyimages-1011819170-612x612.jpg"
+            alt="picture of dishes"
+            class="pictureOfDish"
+          />
+          <div class="dishDescription"><h4>Name of dishes</h4></div>
+          <button>add to Card</button>
+        </div>
+        <div class="dishContainer">
+          <img
+            src="./img/gettyimages-1011819170-612x612.jpg"
+            alt="picture of dishes"
+            class="pictureOfDish"
+          />
+          <div class="dishDescription"><h4>Name of dishes</h4></div>
+          <button>add to Card</button>
+        </div>
+      </main>
+    </div>
+    <div class="cart">
+      <form action="" method="post">
+        <div class="border userForm">
+          <div class="">
+            <label for="name">Name</label><br />
+            <input
+              type="text"
+              name="fName"
+              id="name"
+              placeholder="Write your name"
+              required
+            />
+          </div>
+          <div>
+            <label for="email">Email</label><br />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Write your name"
+              required
+            />
+          </div>
+          <div>
+            <label for="phoneNumber">Phone Number</label><br />
+            <input
+              type="number"
+              name="phoneNumber"
+              id="phoneNumber"
+              placeholder="Write your name"
+              required
+            />
+          </div>
+          <div>
+            <label for="adress">Adress</label><br />
+            <input
+              type="text"
+              name="adress"
+              id="adress"
+              placeholder="Write your name"
+              required
+            />
+          </div>
+        </div>
+        <div class="order border">
+          <div class="eachOrder border">
+            <img
+              src="./img/gettyimages-1011819170-612x612.jpg"
+              alt="picture of dishes"
+              class="imgInCart"
+            />
+            <div class="descrEachOrder">
+              <h4>Name of dishes</h4>
+              <p>Price for one</p>
+              <input type="number" name="count" id="counter" max="10" />
+            </div>
+          </div>
+          <div class="eachOrder border">
+            <img
+              src="./img/gettyimages-1011819170-612x612.jpg"
+              alt="picture of dishes"
+              class="imgInCart"
+            />
+            <div class="descrEachOrder">
+              <h4>Name of dishes</h4>
+              <p>Price for one</p>
+              <input type="number" name="count" id="counter" max="10" />
+            </div>
+          </div>
+          <div class="eachOrder border">
+            <img
+              src="./img/gettyimages-1011819170-612x612.jpg"
+              alt="picture of dishes"
+              class="imgInCart"
+            />
+            <div class="descrEachOrder">
+              <h4>Name of dishes</h4>
+              <p>Price for one</p>
+              <input type="number" name="count" id="counter" max="10" />
+            </div>
+          </div>
+          <div class="eachOrder border">
+            <img
+              src="./img/gettyimages-1011819170-612x612.jpg"
+              alt="picture of dishes"
+              class="imgInCart"
+            />
+            <div class="descrEachOrder">
+              <h4>Name of dishes</h4>
+              <p>Price for one</p>
+              <input type="number" name="count" id="counter" max="10" />
+            </div>
+          </div>
+        </div>
+        <input type="submit" value="submit" class="submBtn"/>
+      </form>
+    </div>
+  </body>
+</html>
