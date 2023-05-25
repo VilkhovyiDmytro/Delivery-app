@@ -143,15 +143,16 @@ const generateOrderView = function (cart) {
 /////////////////////////////////////////
 
 ///////////////////////////// listeners
+const goToShopPage = function() {
+    parrentEl.innerHTML = "";
+    cartCont.classList.add("hidden");
+    cartBtn.classList.add("noDecoration");
+  
+    shopingCont.classList.remove("hidden");
+    shoppingBtn.classList.remove("noDecoration");
+}
+shoppingBtn.addEventListener("click", goToShopPage);
 
-shoppingBtn.addEventListener("click", function () {
-  parrentEl.innerHTML = "";
-  cartCont.classList.add("hidden");
-  cartBtn.classList.add("noDecoration");
-
-  shopingCont.classList.remove("hidden");
-  shoppingBtn.classList.remove("noDecoration");
-});
 cartBtn.addEventListener("click", function () {
   shopingCont.classList.add("hidden");
   shoppingBtn.classList.add("noDecoration");
@@ -172,7 +173,9 @@ submitForm.addEventListener("submit", function (e) {
   ) {
     alert("you must buy everything from one shop ❗❗❗");
   } else {
-    alert("🎉🎊🎉 your order is on its way to you 🏃‍♂️🏃‍♀️");
+      goToShopPage()
+      cartData = []
+      alert("🎉🎊🎉 your order is on its way to you 🏃‍♂️🏃‍♀️");
   }
 });
 
