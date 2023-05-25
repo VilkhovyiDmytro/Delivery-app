@@ -205,10 +205,10 @@ submitForm.addEventListener("submit", function (e) {
   ) {
     popupWindow("you must buy everything from one shop ❗❗❗");
   } else {
-    goToShopPage();
-    cartData = [];
-    menu.insertAdjacentElement = "<h2>Chose a restaurant</h2>";
-    alert("🎉🎊🎉 your order is on its way to you 🏃‍♂️🏃‍♀️");
+      cartData = [];
+      menu.insertAdjacentElement = "<h2>Chose a restaurant</h2>";
+      popupWindow("🎉🎊🎉 your order is on its way to you 🏃‍♂️🏃‍♀️");
+      goToShopPage();
   }
 });
 
@@ -262,26 +262,5 @@ const generateNavbar = function (data) {
 generateNavbar(shops);
 
 
-// const links = document.querySelectorAll("a");
-// links.forEach(function(link) {
-//     const button = document.createElement("button");
-//     button.innerHTML = "+";
-//     button.style.position = "absolute";
-//     button.style.top = "0";
-//     button.style.right = "-20px";
-//     button.onclick = function() {
-//         const plus = document.createElement("span");
-//         plus.innerHTML = "+";
-//         plus.style.position = "absolute";
-//         plus.style.top = "0";
-//         plus.style.right = "-40px";
-//         link.parentElement.appendChild(plus);
-//         setTimeout(function() {
-//             plus.remove();
-//         }, 2000);
-//     }
-//     link.parentElement.style.position = "relative";
-//     link.parentElement.appendChild(button);
-// });
 
 
