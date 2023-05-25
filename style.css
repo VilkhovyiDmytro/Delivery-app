@@ -50,7 +50,7 @@ nav {
 }
 nav button {
   border-radius: 20%;
-  background-color: rgb(224, 222, 222);
+  /* background-color: rgb(224, 222, 222); */
   width: 75%;
   margin: 15px 15px;
 }
@@ -156,10 +156,7 @@ form {
 .submBtn {
   grid-column: 3;
   grid-row: 2;
-  max-height: 32%;
   align-self: center;
-  height: 40px;
-  border-radius: 16px;
   border: none;
   font-size: larger;
 }
@@ -170,32 +167,65 @@ label[for="btnSubmit"] {
   margin-left: 30%;
 }
 
-/* Ширина скролбара */
+/* скролбар */
 ::-webkit-scrollbar {
   margin-top: 20px;
   width: 8px;
 }
 
-/* Тло скролбара */
 ::-webkit-scrollbar-track {
   border-radius: 5px;
 
   background: transparent;
 }
 
-/* Кнопка скролбара */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
 
   background: #888;
 }
 
-/* Кнопка скролбара при наведенні */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
   height: 20px;
 }
+/*  */
 
 .hidden {
   display: none;
 }
+
+button:active {
+  transform: scale(0.95);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #3E8E41;
+}
+
+.my-submit-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #008CBA;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.my-submit-button:hover {
+  background-color: #006699;
+}
+
+main h2 {
+  text-align: center;
+}
+

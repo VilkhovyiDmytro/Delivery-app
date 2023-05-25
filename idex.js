@@ -106,14 +106,40 @@ const mathTotal = function (cart) {
   total.textContent = sum;
   //    total.textContent = 1000
 };
-/////////////
+/////////////  poopupWindow
+
+const popupWindow = function (text) {
+  const popup = document.createElement("div");
+  popup.style.position = "fixed";
+  popup.style.bottom = "20px";
+  popup.style.right = "20px";
+  popup.style.backgroundColor = "#FFD700";
+  popup.style.padding = "10px";
+  popup.style.borderRadius = "5px";
+  popup.innerHTML = text;
+
+  const closeButton = document.createElement("span");
+  closeButton.innerHTML = "×";
+  closeButton.style.float = "right";
+  closeButton.style.cursor = "pointer";
+  closeButton.onclick = function () {
+    popup.remove();
+  };
+
+  popup.appendChild(closeButton);
+  document.body.appendChild(popup);
+
+  setTimeout(function () {
+    popup.remove();
+  }, 5000);
+};
 
 /////////////////////////////////////// CART
 
 const parrentEl = document.querySelector(".order");
 
 const generateOrderView = function (cart) {
-  cart.forEach((e) => {
+  cart.forEach((e, i) => {
     const className = e.name.replaceAll(" ", "");
     const markup = `
         <div class="eachOrder border">
@@ -131,10 +157,16 @@ const generateOrderView = function (cart) {
         `;
     parrentEl.insertAdjacentHTML("beforeend", markup);
     const input = document.querySelector(`.eachOrder .${className}`);
+    const parag = document.querySelector(`.eachOrder .parag${className}`);
+    parag.textContent = `${e.price * e.counter}₴`;
     input.addEventListener("input", function () {
       e.counter = input.value;
-      const parag = document.querySelector(`.eachOrder .parag${className}`);
-      parag.textContent = `${e.price * e.counter}₴`;
+      if (e.counter <= 0) {
+        delete cart[i];
+        console.log(cart);
+        const div = input.parentElement;
+        div.remove();
+      }
       mathTotal(cartData);
     });
   });
@@ -143,14 +175,14 @@ const generateOrderView = function (cart) {
 /////////////////////////////////////////
 
 ///////////////////////////// listeners
-const goToShopPage = function() {
-    parrentEl.innerHTML = "";
-    cartCont.classList.add("hidden");
-    cartBtn.classList.add("noDecoration");
-  
-    shopingCont.classList.remove("hidden");
-    shoppingBtn.classList.remove("noDecoration");
-}
+const goToShopPage = function () {
+  parrentEl.innerHTML = "";
+  cartCont.classList.add("hidden");
+  cartBtn.classList.add("noDecoration");
+
+  shopingCont.classList.remove("hidden");
+  shoppingBtn.classList.remove("noDecoration");
+};
 shoppingBtn.addEventListener("click", goToShopPage);
 
 cartBtn.addEventListener("click", function () {
@@ -163,19 +195,20 @@ cartBtn.addEventListener("click", function () {
   mathTotal(cartData);
 });
 submitForm.addEventListener("submit", function (e) {
-    e.preventDefault()
-  if (cartData.length === 0) {
-    alert("you must buy something for delivery ❗❗❗");
+  e.preventDefault();
+  if (cartData.length === 0 || !cartData[0]) {
+    popupWindow("you must buy something for delivery ❗❗❗");
   } else if (
     !cartData.every((e) => {
       return e.shopName === cartData[0].shopName;
     })
   ) {
-    alert("you must buy everything from one shop ❗❗❗");
+    popupWindow("you must buy everything from one shop ❗❗❗");
   } else {
-      goToShopPage()
-      cartData = []
-      alert("🎉🎊🎉 your order is on its way to you 🏃‍♂️🏃‍♀️");
+    goToShopPage();
+    cartData = [];
+    menu.insertAdjacentElement = "<h2>Chose a restaurant</h2>";
+    alert("🎉🎊🎉 your order is on its way to you 🏃‍♂️🏃‍♀️");
   }
 });
 
@@ -227,3 +260,28 @@ const generateNavbar = function (data) {
   });
 };
 generateNavbar(shops);
+
+
+// const links = document.querySelectorAll("a");
+// links.forEach(function(link) {
+//     const button = document.createElement("button");
+//     button.innerHTML = "+";
+//     button.style.position = "absolute";
+//     button.style.top = "0";
+//     button.style.right = "-20px";
+//     button.onclick = function() {
+//         const plus = document.createElement("span");
+//         plus.innerHTML = "+";
+//         plus.style.position = "absolute";
+//         plus.style.top = "0";
+//         plus.style.right = "-40px";
+//         link.parentElement.appendChild(plus);
+//         setTimeout(function() {
+//             plus.remove();
+//         }, 2000);
+//     }
+//     link.parentElement.style.position = "relative";
+//     link.parentElement.appendChild(button);
+// });
+
+
