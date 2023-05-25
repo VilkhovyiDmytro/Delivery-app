@@ -161,7 +161,8 @@ cartBtn.addEventListener("click", function () {
   generateOrderView(cartData);
   mathTotal(cartData);
 });
-submitForm.addEventListener("submit", function () {
+submitForm.addEventListener("submit", function (e) {
+    e.preventDefault()
   if (cartData.length === 0) {
     alert("you must buy something for delivery ❗❗❗");
   } else if (
