@@ -84,6 +84,18 @@ const shops = [
     ],
   },
 ];
+
+const cartData = [];
+/////////////////////////////////////////
+
+const saveLocalStorage = function (name="cart", item=cartData) {
+  localStorage.setItem(name, JSON.stringify(item));
+};
+document.addEventListener("DOMContentLoaded", function() {
+   const data = JSON.parse(localStorage.getItem("cart"));
+   cartData.push(...data)
+});
+
 /////////////////////////////////////////////////////
 
 const shoppingBtn = document.querySelector(".shopBtn");
@@ -95,7 +107,6 @@ const navbar = document.querySelector(".navbar");
 const submitForm = document.querySelector("form");
 const total = document.querySelector(".total");
 
-const cartData = [];
 
 //////////////// total price
 total.textContent = 1000;
@@ -163,16 +174,15 @@ const generateOrderView = function (cart) {
       e.counter = input.value;
       if (e.counter <= 0) {
         delete cart[i];
-        console.log(cart);
+        saveLocalStorage();
         const div = input.parentElement;
         div.remove();
       }
+      saveLocalStorage();
       mathTotal(cartData);
     });
   });
 };
-
-/////////////////////////////////////////
 
 ///////////////////////////// listeners
 const goToShopPage = function () {
@@ -205,10 +215,11 @@ submitForm.addEventListener("submit", function (e) {
   ) {
     popupWindow("you must buy everything from one shop ❗❗❗");
   } else {
-      cartData = [];
-      menu.insertAdjacentElement = "<h2>Chose a restaurant</h2>";
-      popupWindow("🎉🎊🎉 your order is on its way to you 🏃‍♂️🏃‍♀️");
-      goToShopPage();
+    cartData = [];
+    saveLocalStorage();
+    menu.insertAdjacentElement = "<h2>Chose a restaurant</h2>";
+    popupWindow("🎉🎊🎉 your order is on its way to you 🏃‍♂️🏃‍♀️");
+    goToShopPage();
   }
 });
 
@@ -245,6 +256,7 @@ const showMenu = function (obj) {
           cartData.push(element);
           element.counter = 1;
         }
+        saveLocalStorage()
       });
   });
 };
@@ -260,7 +272,3 @@ const generateNavbar = function (data) {
   });
 };
 generateNavbar(shops);
-
-
-
-
