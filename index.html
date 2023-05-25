@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Delivery App</title>
+    <script src="./idex.js" defer></script>
   </head>
   <body>
     <header>
-      <a href="">Shop</a><span>|</span><a href="">Shoping Cart</a>
+      <a href="" class="shopBtn" onclick="event.preventDefault()">Shop</a
+      ><span>|</span
+      ><a href="" class="cartBtn noDecoration" onclick="event.preventDefault()"
+        >Shoping Cart</a
+      >
     </header>
-    <div class="shoping hidden" id="">
-      <nav class="">
+    <div class="shoping" id="">
+      <nav class="navbar">
         <h2>Shops:</h2>
-        <button>Restik1</button>
-        <button>Restik2</button>
-        <button>Restik3</button>
-        <button>Restik4</button>
-        <button>Restik5</button>
-        <button>Restik6</button>
+        <!-- <button class="restik1">Restik1</button>  -->
       </nav>
       <main class="menu border">
-        <div class="dishContainer">
+        <h2>Chose a restaurant</h2>
+        <!-- <div class="dishContainer">
           <img
             src="./img/gettyimages-1011819170-612x612.jpg"
             alt="picture of dishes"
@@ -31,36 +32,10 @@
           <div class="dishDescription"><h4>Name of dishes</h4></div>
           <button>add to Card</button>
         </div>
-        <div class="dishContainer">
-          <img
-            src="./img/gettyimages-1011819170-612x612.jpg"
-            alt="picture of dishes"
-            class="pictureOfDish"
-          />
-          <div class="dishDescription"><h4>Name of dishes</h4></div>
-          <button>add to Card</button>
-        </div>
-        <div class="dishContainer">
-          <img
-            src="./img/gettyimages-1011819170-612x612.jpg"
-            alt="picture of dishes"
-            class="pictureOfDish"
-          />
-          <div class="dishDescription"><h4>Name of dishes</h4></div>
-          <button>add to Card</button>
-        </div>
-        <div class="dishContainer">
-          <img
-            src="./img/gettyimages-1011819170-612x612.jpg"
-            alt="picture of dishes"
-            class="pictureOfDish"
-          />
-          <div class="dishDescription"><h4>Name of dishes</h4></div>
-          <button>add to Card</button>
-        </div>
+         -->
       </main>
     </div>
-    <div class="cart">
+    <div class="cart hidden">
       <form action="" method="post">
         <div class="border userForm">
           <div class="">
@@ -105,56 +80,21 @@
           </div>
         </div>
         <div class="order border">
-          <div class="eachOrder border">
+          <!-- <div class="eachOrder border">
             <img
               src="./img/gettyimages-1011819170-612x612.jpg"
               alt="picture of dishes"
               class="imgInCart"
             />
-            <div class="descrEachOrder">
-              <h4>Name of dishes</h4>
-              <p>Price for one</p>
-              <input type="number" name="count" id="counter" max="10" />
-            </div>
-          </div>
-          <div class="eachOrder border">
-            <img
-              src="./img/gettyimages-1011819170-612x612.jpg"
-              alt="picture of dishes"
-              class="imgInCart"
-            />
-            <div class="descrEachOrder">
-              <h4>Name of dishes</h4>
-              <p>Price for one</p>
-              <input type="number" name="count" id="counter" max="10" />
-            </div>
-          </div>
-          <div class="eachOrder border">
-            <img
-              src="./img/gettyimages-1011819170-612x612.jpg"
-              alt="picture of dishes"
-              class="imgInCart"
-            />
-            <div class="descrEachOrder">
-              <h4>Name of dishes</h4>
-              <p>Price for one</p>
-              <input type="number" name="count" id="counter" max="10" />
-            </div>
-          </div>
-          <div class="eachOrder border">
-            <img
-              src="./img/gettyimages-1011819170-612x612.jpg"
-              alt="picture of dishes"
-              class="imgInCart"
-            />
-            <div class="descrEachOrder">
-              <h4>Name of dishes</h4>
-              <p>Price for one</p>
-              <input type="number" name="count" id="counter" max="10" />
-            </div>
-          </div>
+            <h4>Name of dishes</h4>
+            <p>Price for one</p>
+            <input type="number" name="count" id="counter" max="10" value="1" />
+          </div> -->
         </div>
-        <input type="submit" value="submit" class="submBtn"/>
+        <label for="btnSubmit"
+          >Total price: <span class="total">999</span>₴</label
+        >
+        <input type="submit" value="submit" class="submBtn" id="btnSubmit" />
       </form>
     </div>
   </body>
